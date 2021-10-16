@@ -93,7 +93,6 @@ a {
 }
 
 .sign-div{
-
     display: grid;
     width:900px;
     margin:auto;
@@ -120,15 +119,25 @@ a {
     background-color:#fff;
     border-radius:10px;
     width:215px;
-    height:220px;
+    height:225px;
     font-family: "Rubik",
     sans-serif;
     cursor:pointer;
+    display: block;
 }
 
 .sign-div>button:hover{
     background-color:#fafafa;
 }
+
+
+/* .audio-dis{
+   text-align: center;
+   font-family: "Rubik",
+   sans-serif;
+   font-size:17px;
+   margin-top:0px;
+} */
 
 .audio-dis{
     text-align: center;
@@ -190,6 +199,16 @@ select{
 
 select:hover{
     background-color: #fafafa;
+}
+
+.languages{
+    margin-top:2px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.languages > a{
+    font-size:15px;
 }
 
 
