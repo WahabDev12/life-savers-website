@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Rubik",sans-serif;
+
+}
+
+body {
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #E7E5DC;
+    font-family: "Rubik",
+    sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+h2,
+h3,
+a {
+    color: #34495e;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.logo {
+    margin: 0;
+    font-size: 1.7em;
+}
+
+.main-nav {
+    margin-top: 5px;
+
+}
+
+.logo a,
+.main-nav a {
+    padding: 10px 15px;
+    text-align: center;
+    display: block;
+}
+
+.main-nav a {
+    color: #34495e;
+    font-size: 20px;
+}
+
+.main-nav a:hover {
+    color: #718daa;
+}
+
+
+
+.header {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #FFDD00;
+
+}
+
+.street-title{
+    text-align: center;
+    font-size: 25px;
+}
+
+.video-space{
+    width:850px;
+    height:449px;
+    margin:2rem auto;
+    border:3px dotted #34495e;
+}
+
+
+.sign-main-div{
+    margin-top:4rem;
+}
+
+.button-title{
+    text-align: center;
+    font-size: 30px;
+    margin:0px;
+}
+
+.sign-div{
+
+    display: grid;
+    width:900px;
+    margin:auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    height: 50%;
+    margin-bottom:3rem;
+    
+}
+
+
+.line{
+    width:370px;
+    margin:auto;
+    height:3px;
+    background-color: #ffdd00;
+}
+
+.sign-div > button{
+    padding:10px;
+    outline:none;
+    border:none;
+    background-color:#fff;
+    border-radius:10px;
+    width:215px;
+    height:220px;
+    font-family: "Rubik",
+    sans-serif;
+    cursor:pointer;
+}
+
+.sign-div>button:hover{
+    background-color:#fafafa;
+}
+
+.audio-dis{
+    text-align: center;
+    font-family: "Rubik",
+    sans-serif;
+    vertical-align: middle;
+    outline:none;
+    border:none;
+    width:250px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 70px;
+    padding:5px;
+    height:40px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.hump{
+    width:130px;
+    height:130px;
+}
+
+.road-title{
+    font-family: "Rubik",
+    sans-serif;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #F8F8F8;
+    color: black;
+    font-size: 19px;
+}
+
+b {
+    color: #3F51B5;
+}
+
+.select-div{
+    display: flex;
+    justify-content: center;
+    margin-bottom:1.5rem;
+}
+
+select{
+    outline:none;
+    border:none;
+    width:180px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 35px;
+    padding:5px;
+    height:40px;
+    font-size: 15px;
+}
+
+select:hover{
+    background-color: #fafafa;
+}
+
+
+
+/* RESPONSIVENESS*/
+@media (min-width: 769px) {
+
+    .header,
+    .main-nav {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+}
+
+@media (min-width: 1025px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
