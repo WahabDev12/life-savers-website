@@ -239,7 +239,7 @@ select:hover{
 
 @media only screen and (max-width:375px){
     .logo{
-        font-size:20px;
+        font-size:25px;
 
     }
 
@@ -256,13 +256,14 @@ select:hover{
         width:375px;
         height:150px;
         margin:0.5px auto;
+        border: none;
     }
     video{
         width:375px;
     }
 
     .street-title{
-        font-size:17px;
+        font-size:25px;
     }
 
 
@@ -281,10 +282,7 @@ select:hover{
        margin:20rem auto;
        width: 375px;
        margin-bottom:0.5rem;
- 
-       /* display: grid;
-       grid-template-rows: 1fr 1fr;
-       grid-template-columns: 1fr; */
+       overflow-x: hidden;
       
    }
    
@@ -295,7 +293,7 @@ select:hover{
    }
 
    .line{
-       width:250px;
+       width:220px;
         margin:auto;
 
    }
@@ -310,12 +308,95 @@ select:hover{
        width:300px;
        margin:5px auto;
    }
-/* 
-   display: grid;
-    width:900px;
-    margin:auto;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr; */
+
+   body{
+       overflow-x: hidden;
+       width:100vw;
+   }
+
    
 }
 
+
+@media only screen and (max-width:414px) {
+    .logo {
+        font-size: 25px;
+
+    }
+
+    .header {
+        width: 414px;
+
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .video-space {
+        width: 414px;
+        height: 150px;
+        margin: 0.5px auto;
+        border: none;
+    }
+
+    video {
+        width: 414px;
+    }
+
+    .street-title {
+        font-size: 25px;
+    }
+
+
+    .sign-div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 414px;
+        margin-left: 95px;
+        /* width:414px;
+       margin:2rem auto; */
+    }
+
+    .sign-main-div {
+        margin: 20rem auto;
+        width: 414px;
+        margin-bottom: 0.5rem;
+        overflow-x: hidden;
+
+    }
+
+
+    .button-title {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .line {
+        width: 220px;
+        margin: auto;
+
+    }
+
+    .select-div {
+        display: block;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    select {
+        display: block;
+        justify-content: center;
+        width: 300px;
+        margin: 5px auto;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+
+}
