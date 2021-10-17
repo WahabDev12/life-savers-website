@@ -267,21 +267,48 @@ select:hover{
 
 
     .sign-div {
-        /* display: flex; */
-        /* flex-direction: column;
+        display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
-        justify-content: center; */
-       width:375px;
-       margin:2rem auto;
+        justify-content: center;
+        width:375px;
+        margin-left:70px;
+       /* width:375px;
+       margin:2rem auto; */
     }
 
    .sign-main-div {
-       margin:17rem auto;
+       margin:20rem auto;
        width: 375px;
-       display: grid;
+       margin-bottom:0.5rem;
+ 
+       /* display: grid;
        grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1frh
+       grid-template-columns: 1fr; */
       
+   }
+   
+
+   .button-title{
+       font-size: 17px;
+       text-align: center;
+   }
+
+   .line{
+       width:250px;
+        margin:auto;
+
+   }
+   .select-div {
+       display: block;
+       justify-content: center;
+       margin-bottom: 1.5rem;
+   }
+   select{
+       display: block;
+       justify-content: center;
+       width:300px;
+       margin:5px auto;
    }
 /* 
    display: grid;
