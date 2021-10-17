@@ -368,6 +368,8 @@ select:hover{
 
     }
 
+   
+
 
     .button-title {
         font-size: 17px;
@@ -399,4 +401,10 @@ select:hover{
     }
 
 
+}
+
+@media only screen and (max-width:360px){
+    .footer{
+        width:360px;
+    }
 }
