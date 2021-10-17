@@ -65,7 +65,6 @@ a {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     background-color: #FFDD00;
-    width:100vw;
 
 }
 
@@ -84,6 +83,7 @@ a {
 
 .sign-main-div{
     margin-top:4rem;
+
 }
 
 .button-title{
@@ -103,6 +103,7 @@ a {
     gap: 25px;
     height: 50%;
     margin-bottom:3rem;
+
     
 }
 
@@ -342,7 +343,7 @@ select:hover{
 
     video {
         width: 414px;
-    }
+ }
 
     .street-title {
         font-size: 25px;
