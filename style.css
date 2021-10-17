@@ -41,7 +41,6 @@ a {
 
 .main-nav {
     margin-top: 5px;
-
 }
 
 .logo a,
@@ -66,6 +65,7 @@ a {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     background-color: #FFDD00;
+    width:100vw;
 
 }
 
@@ -91,6 +91,8 @@ a {
     font-size: 30px;
     margin:0px;
 }
+
+
 
 .sign-div{
     display: grid;
@@ -212,7 +214,6 @@ select:hover{
 }
 
 
-
 /* RESPONSIVENESS*/
 @media (min-width: 769px) {
 
@@ -226,7 +227,6 @@ select:hover{
         align-items: center;
 
     }
-
 }
 
 @media (min-width: 1025px) {
@@ -234,5 +234,61 @@ select:hover{
         flex-direction: row;
         justify-content: space-between;
     }
-
+    
 }
+
+@media only screen and (max-width:375px){
+    .logo{
+        font-size:20px;
+
+    }
+
+    .header{
+        width:375px;
+
+    }
+
+    .main-nav{
+        display: none;
+    }
+
+    .video-space{
+        width:375px;
+        height:150px;
+        margin:0.5px auto;
+    }
+    video{
+        width:375px;
+    }
+
+    .street-title{
+        font-size:17px;
+    }
+
+
+    .sign-div {
+        /* display: flex; */
+        /* flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center; */
+       width:375px;
+       margin:2rem auto;
+    }
+
+   .sign-main-div {
+       margin:17rem auto;
+       width: 375px;
+       display: grid;
+       grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1frh
+      
+   }
+/* 
+   display: grid;
+    width:900px;
+    margin:auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; */
+   
+}
+
