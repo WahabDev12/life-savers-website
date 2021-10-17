@@ -337,7 +337,7 @@ select:hover{
         width: 414px;
         height: 150px;
         margin: 0.5px auto;
-        border:3px dotted #34495e;
+        border:3px solid #34495e;
 }
 
     video {
