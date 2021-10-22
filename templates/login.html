@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+     
+
+    <title>Login | LifeSavers❤️</title>
+</head>
+<body>
+    <div class="bg"></div>
+    
+    <div class="container">
+  <div class="header1" style="background-color: #FFD000;padding:0.5px">
+    <h2 style="text-align: center;">Log In </h2>
+  </div>
+
+  <form id="form" class="form">
+
+    <div class="form-control">
+      <label for="username">Email</label>
+      <input required name="email" type="text" placeholder="" id="email" />
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+      <label for="username">Password</label>
+      <input required name="password" type="password" placeholder="" id="password" />
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error message</small>
+    </div>
+
+    <button>Submit</button>
+  </form>
+
+</div>
+
+
+
+</body>
+</html>
