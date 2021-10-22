@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="/static/images/love-favicon.png"/>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
      
@@ -23,28 +24,19 @@
     <div class="form-control">
       <label for="username">Username</label>
       <input name="username" required type="text" placeholder="" id="username" />
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error message</small>
     </div>
 
     <div class="form-control">
       <label for="username">Email</label>
       <input name="email" required type="email" placeholder="" id="email" />
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error message</small>
     </div>
 
     <div class="form-control">
       <label for="password">Password</label>
       <input name="password" required type="password" placeholder="" id="password" />
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error message</small>
     </div>
 
-    <button>Submit</button>
+    <button style="cursor:pointer;">Submit</button>
      <a  style="text-align:center;padding-top:2px"  href="/login">
         Already have an account? <b>Login</b>
     </a>

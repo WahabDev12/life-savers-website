@@ -21,6 +21,7 @@ app.config["SECRET_KEY"] = "LiveSavers123"
 
 # FLASK LOGIN CONFIG
 login_manager = LoginManager()
+login_manager.init_app(app)
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 
@@ -53,15 +54,14 @@ def register():
         email = request.form["email"]
         password = request.form["username"]
         hashed_password = generate_password_hash(password,method="sha1")
-        new_user = User(username=username, email=email, password=hashed_password)
-        # ADD USER TO DATABASE
+        new_user = User(username=username, email=email, password = hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        return redirect(url_for("login"))
-
+        login_user(new_user)
+        flash("Your account has been created")
+        return redirect(url_for("dashboard"))
 
     return render_template("register.html")
-
 
 
 
@@ -72,22 +72,20 @@ def login():
         password = request.form["password"]
         user = User.query.filter_by(email= email).first()
         if user:
-            if check_password_hash(user.password, password):
-                login_user(user, remember= True)   
-                return redirect(url_for("dashboard"))
-        else:
-            flash("Invalid email or password", "danger")
+            if check_password_hash(user.password,password):
+                    login_user(user)
+                    return redirect(url_for("dashboard"))
+            else:
+                flash("Invalid email or password", "danger")
 
     return render_template('login.html')
 
 
 
-# DASHBOARD ROUTE
-# @login_required
+@login_required
 @app.route("/dashboard",methods=["POST","GET"])
 def dashboard():
-    current_user.username = username
-    return render_template("dashboard.html", current_user = current_user)
+    return render_template("dashboard.html", name = current_user.username)
 
 
 
@@ -95,7 +93,7 @@ def dashboard():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('/'))
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     db.create_all()

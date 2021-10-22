@@ -1,0 +1,138 @@
+.hero {
+    background-color: #000000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(
+      "/static/images/index-bg-1.jpg"
+    );
+    background-position: center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 1em;
+    background-repeat: no-repeat,repeat;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.hero-title {
+    color: white;
+    position: relative;
+    margin-top: 12%;
+    font-size: 3rem;
+}
+
+.service-title{
+    text-align: center;
+}
+
+.line-two{
+    width:320px;
+    margin: 0px auto;
+    height:3px;
+    background-color: #ffdd00;
+}
+
+
+.love-center{
+    width:70px;
+    position: relative;
+    margin-top:0px;
+
+}
+
+.bg-get-started:hover{
+    background-color: #f7df47;
+}
+
+.bg-get-started{
+    outline:none;
+    border:none;
+    padding:10px;
+    width:120px;
+    background-color: #ffdd00;
+    color:#34495e;
+    width:140px;
+    height:50px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+
+/* CARD */
+body {
+    background-color: lightgrey;
+}
+
+/* Transistion both your normal and hovered elements to allow for smooth flow when unhovered */
+
+.card {
+    background: white;
+    margin-top: 40px;
+    height: 400px;
+    width: 23%;
+    transition: 0.6s all ease;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+/* I used background url to allow me to change the height and width without needing extra css */
+
+.cardTop {
+    transition: 0.4s all ease;
+    height: 50%;
+    background: url("/static/images/translate-1.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cardBottom {
+    height: 35%;
+    text-wrap: normal;
+    transition: 0.4s all ease;
+}
+
+.cardText {
+    min-height: 100%;
+    padding:20px;
+}
+
+.cardTitle {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cardInfo {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: orange;
+}
+
+/* Hidding the entire so anything we put in will only show on hover */
+
+.cardHoverText {
+    visibility: hidden;
+}
+
+
+.flex-container {
+
+    display: flex;
+
+    justify-content: space-around;
+    /* flex-flow: row wrap; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+
+    height: 100%;
+    padding: 15px;
+    gap: 5px;
+
+}
+
+.flex-container>div {
+    padding: 8px;
+}
+
+
+

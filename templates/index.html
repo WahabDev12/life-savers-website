@@ -4,9 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" type="image/jpg" href="/static/images/love-favicon.png"/>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main.css') }}">
+    <title>LiveSavers | Home</title>
 </head>
-<body>
-    <h2>Test</h2>
+
+         <header class="header">
+		<h2 class="logo"><a href="/">LifeSavers❤️ </a></h2>
+      <ul class="main-nav">
+            <li>
+                <a href="#" className="pom-button">
+                  <span style="text-transform: capitalize;"> Home</span>
+                </a>    
+            </li>
+               <li>
+                <a href="/register" style="cursor:pointer;" method="POST" class="pom-button">
+                   <span>Register</span>
+                </a>    
+            </li>
+               <li>
+                <a href="/login" style="cursor:pointer;" method="POST" class="pom-button">
+                   <span>Log In</span>
+                </a>    
+            </li>
+     
+      </ul>
+	</header> 
+    <div class="hero">
+        <!-- <img class="love-center" src="/static/images/love-favicon.png"> -->
+        <h3 class="hero-title" >Improving road safety through technology</h3>
+        <button class="bg-get-started">
+            <a href="/register">
+            Get Started
+            </a>
+        </button>
+    </div>
+
+    <!-- Our services -->
+    <section>
+        <h2 class="service-title">Our Services</h2>
+
+        <div class="line-two"></div>
+
+        <div class="flex-container">
+            <div class="card">
+               <div class="cardTop">
+            </div>
+            <div class="cardBottom">
+                <div class="cardText">
+                <h3 class="cardTitle">Road Sign Translator</h3>
+                <h4 class="cardInfo">Translates all road signs to local dialect</h4>
+                </div>
+            </div>
+                </div>
+            <div class="card">
+               <div class="cardTop">
+            </div>
+            <div class="cardBottom">
+                <div class="cardText">
+                <h3 class="cardTitle">Road Sign Translator</h3>
+                <h4 class="cardInfo">Translates all road signs to local dialect</h4>
+                </div>
+            </div>
+                </div>
+            <div class="card">
+               <div class="cardTop">
+            </div>
+            <div class="cardBottom">
+                <div class="cardText">
+                <h3 class="cardTitle">Road Sign Translator</h3>
+                <h4 class="cardInfo">Translates all road signs to local dialect</h4>
+                </div>
+            </div>
+                </div>
+        </div>
+    </section>
+   
+
+
 </body>
 </html>
