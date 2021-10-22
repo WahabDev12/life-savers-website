@@ -12,16 +12,24 @@
      <header class="header">
 		<h2 class="logo"><a href="/">LifeSavers❤️ </a></h2>
       <ul class="main-nav">
-          <li> <a href="#" className="pom-button">
+          <li>
+               <a href="#" className="pom-button">
               <span>Our Service</span>
             
               </a>
-              </li>
-          <li> <a href="#" className="pom-button">
-              <span>About</span>
-            
-              </a>
-              </li>
+          </li>
+            <li>
+                <a href="#" className="pom-button">
+                  <span>About</span>
+                </a>    
+            </li>
+            <li>
+                <a href="#" className="pom-button">
+                    {% for user in current_user%}
+                  <span>{{user.email}}</span>
+                  {% endfor %}
+                </a>    
+            </li>
      
       </ul>
 	</header> 

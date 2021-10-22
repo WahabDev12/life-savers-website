@@ -14,11 +14,22 @@
     <div class="bg"></div>
     
     <div class="container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages%}
+        <div style="width:270px;margin:auto;">
+            <h4 style="width:250px;color:#d9534f" role="alert" class="text-center alert alert-danger">{{message}}
+            </h4>
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
   <div class="header1" style="background-color: #FFD000;padding:0.5px">
     <h2 style="text-align: center;">Log In </h2>
   </div>
 
-  <form id="form" class="form">
+
+  <form action="/login" method="POST" id="form" class="form">
 
     <div class="form-control">
       <label for="username">Email</label>
@@ -36,7 +47,10 @@
       <small>Error message</small>
     </div>
 
-    <button>Submit</button>
+    <button style="cursor: pointer;">Submit</button>
+    <a  style="text-align:center;padding-top:2px"  href="/register">
+        No account yet? <b>Register</b>
+    </a>
   </form>
 
 </div>
