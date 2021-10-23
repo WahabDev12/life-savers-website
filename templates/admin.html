@@ -5,11 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpg" href="/static/images/love-favicon.png"/>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='admin.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
     <title>Admin Panel</title>
 </head>
+
 <body>
-    <div class="admin">
-        <h2>This is Admin</h2>
-    </div>
+
+     <header class="header">
+		<h2 class="logo"><a href="/">Admin Panel </a></h2>
+      <ul class="main-nav">
+
+           
+               <li>
+                <a href="/logout" style="cursor:pointer;" method="POST" class="pom-button">
+                   Logout
+                </a>    
+            </li>
+     
+      </ul>
+	</header> 
+
+
 </body>
 </html>

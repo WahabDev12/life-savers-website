@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager,UserMixin
 from flask_login import login_required,logout_user,login_user,current_user
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_paginate import Pagination, get_page_parameter
 import os
-
 
 
 app = Flask(__name__)
@@ -36,6 +36,7 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(200),nullable = False)
     email = db.Column(db.String(200), nullable = False)
     password = db.Column(db.String(100), nullable = False)
+    date_created = db.Column(db.Datetime, nullable  = False)
 
 def __repr__(self):
     return '<User %r>' % self.username
@@ -57,8 +58,8 @@ def register():
         new_user = User(username=username, email=email, password = hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        login_user(new_user)
         flash("Your account has been created")
+        login_user(new_user)
         return redirect(url_for("dashboard"))
 
     return render_template("register.html")
@@ -76,7 +77,7 @@ def login():
                     login_user(user)
                     return redirect(url_for("dashboard"))
             else:
-                flash("Invalid email or password", "danger")
+                flash("Invalid email or password")
         if email == "admin" and password == "admin123":
             return redirect(url_for("admin"))
 
@@ -92,8 +93,15 @@ def dashboard():
 @login_required
 @app.route("/admin")
 def admin():
+    search = False
+    q = request.args.get('q')
+    if q:
+        search = True
+    page = request.args.get(get_page_parameter(), type=int, default=1)
     users = User.query.all()
-    return render_template("admin.html",users = users)
+    pagination = Pagination(page=page, total= users.count(int(len(users))), search = search, record_name='users')
+    return render_template("admin.html",users = users, pagination = pagination ,name = current_user.username)
+
 
 @app.route('/logout')
 @login_required
