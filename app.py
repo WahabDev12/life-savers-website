@@ -3,7 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager,UserMixin
 from flask_login import login_required,logout_user,login_user,current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_paginate import Pagination, get_page_parameter
+# from flask_paginate import Pagination, get_page_parameter
+from datetime import datetime
 import os
 
 
@@ -36,7 +37,7 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(200),nullable = False)
     email = db.Column(db.String(200), nullable = False)
     password = db.Column(db.String(100), nullable = False)
-    date_created = db.Column(db.Datetime, nullable  = False)
+    date_created = db.Column(db.DateTime, default = datetime.utcnow, nullable  = False)
 
 def __repr__(self):
     return '<User %r>' % self.username
@@ -90,17 +91,14 @@ def login():
 def dashboard():
     return render_template("dashboard.html", name = current_user.username)
 
+ROWS_PER_PAGE = 5
 @login_required
 @app.route("/admin")
 def admin():
-    search = False
-    q = request.args.get('q')
-    if q:
-        search = True
-    page = request.args.get(get_page_parameter(), type=int, default=1)
-    users = User.query.all()
-    pagination = Pagination(page=page, total= users.count(int(len(users))), search = search, record_name='users')
-    return render_template("admin.html",users = users, pagination = pagination ,name = current_user.username)
+    page = request.args.get('page', 1, type=int)
+    users = User.query.paginate(page=page, per_page=ROWS_PER_PAGE)
+    return render_template('admin.html', users=users)
+
 
 
 @app.route('/logout')
