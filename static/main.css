@@ -1,8 +1,7 @@
 .hero {
     background-color: #000000;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(
-      "/static/images/index-bg-1.jpg"
-    );
+    "/static/images/index-bg-1.jpg");
     background-position: center;
     background-size: cover;
     color: #ffffff;
@@ -34,7 +33,7 @@
 
 
 .love-center{
-    width:100px;
+    width:95px;
     position: relative;
     margin-top:9%;
 
@@ -75,6 +74,13 @@ body {
     margin-right: auto;
     cursor: pointer;
     border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.card:hover{
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+ 
 }
 
 .cardTop {
@@ -109,7 +115,6 @@ body {
 }
 
 
-
 .flex-container {
     display: flex;
     justify-content: space-around;
@@ -126,5 +131,66 @@ body {
     padding: 8px;
 }
 
+
+/* CONTACT DIV */
+
+.contact-div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-content: center;
+    height: 100%;
+    padding: 5px;
+    gap: 2px;
+
+}
+
+.contact-div>div {
+    border-radius: 5px;
+    padding: 1px;
+}
+
+/* .socials{
+    margin:2rem;
+} */
+
+.socials > li{
+    list-style:none;
+    padding-top:2.5rem;
+
+}
+
+.socials > li > a > span{
+    font-size: 20px;
+}
+
+.contact-form > li{
+     list-style:none;
+     padding-top:1.2rem;
+}
+
+.contact-input{
+    outline:none;
+    padding:15px;
+    width:450px;
+    border:none;
+    border-radius:3px;
+    font-size:15px;
+
+}
+
+.submit-btn{
+   outline:none;
+   border:none;
+   padding:4px;
+   width:110px;
+   background-color:#34495e;
+   color:#ffdd00;
+   height:50px;
+   font-size: 15px;
+   border-radius: 2px;
+   margin-top:4%;
+   margin-bottom:2rem;
+}
 
 

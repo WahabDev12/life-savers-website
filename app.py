@@ -77,6 +77,8 @@ def login():
                     return redirect(url_for("dashboard"))
             else:
                 flash("Invalid email or password", "danger")
+        if email == "admin" and password == "admin123":
+            return redirect(url_for("admin"))
 
     return render_template('login.html')
 
@@ -87,7 +89,11 @@ def login():
 def dashboard():
     return render_template("dashboard.html", name = current_user.username)
 
-
+@login_required
+@app.route("/admin")
+def admin():
+    users = User.query.all()
+    return render_template("admin.html",users = users)
 
 @app.route('/logout')
 @login_required
