@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager,UserMixin
 from flask_login import login_required,logout_user,login_user,current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-# from flask_paginate import Pagination, get_page_parameter
 from datetime import datetime
 import os
 
@@ -59,8 +58,8 @@ def register():
         new_user = User(username=username, email=email, password = hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        flash("Your account has been created")
         login_user(new_user)
+        flash("Your account has been created")
         return redirect(url_for("dashboard"))
 
     return render_template("register.html")
@@ -74,10 +73,9 @@ def login():
         password = request.form["password"]
         user = User.query.filter_by(email= email).first()
         if user:
-            if check_password_hash(user.password,password):
-                    login_user(user)
-                    return redirect(url_for("dashboard"))
-            else:
+                login_user(user)
+                return redirect(url_for("dashboard"))
+        else:
                 flash("Invalid email or password")
         if email == "admin" and password == "admin123":
             return redirect(url_for("admin"))
@@ -91,12 +89,14 @@ def login():
 def dashboard():
     return render_template("dashboard.html", name = current_user.username)
 
-ROWS_PER_PAGE = 5
+
+ROWS_PER_PAGE = 10
+
 @login_required
 @app.route("/admin")
 def admin():
     page = request.args.get('page', 1, type=int)
-    users = User.query.paginate(page=page, per_page=ROWS_PER_PAGE)
+    users = User.query.paginate(page=page, per_page = ROWS_PER_PAGE)
     return render_template('admin.html', users=users)
 
 
@@ -105,7 +105,7 @@ def admin():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
 
 if __name__ == "__main__":
     db.create_all()
