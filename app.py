@@ -55,11 +55,10 @@ def register():
         email = request.form["email"]
         password = request.form["username"]
         hashed_password = generate_password_hash(password,method="sha1")
-        new_user = User(username=username, email=email, password = hashed_password)
+        new_user = User(username = username, email = email, password = hashed_password)
         db.session.add(new_user)
         db.session.commit()
         login_user(new_user)
-        flash("Your account has been created")
         return redirect(url_for("dashboard"))
 
     return render_template("register.html")
@@ -71,7 +70,7 @@ def login():
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["password"]
-        user = User.query.filter_by(email= email).first()
+        user = User.query.filter_by(email = email).first()
         if user:
                 login_user(user)
                 return redirect(url_for("dashboard"))
@@ -95,8 +94,8 @@ ROWS_PER_PAGE = 10
 @login_required
 @app.route("/admin")
 def admin():
-    page = request.args.get('page', 1, type=int)
-    users = User.query.paginate(page=page, per_page = ROWS_PER_PAGE)
+    page = request.args.get('page', 1, type = int)
+    users = User.query.paginate(page = page, per_page = ROWS_PER_PAGE)
     return render_template('admin.html', users=users)
 
 
